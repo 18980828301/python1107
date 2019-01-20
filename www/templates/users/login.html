@@ -3,8 +3,10 @@
 {% block content %}
     <form action="" method="post" class="form-horizontal">
         {% csrf_token %}
-    <input type="text" name="num" id="num" placeholder="请输入用户名/手机号" class="login-name">
-    <input type="password" name="password" id="password" placeholder="请输入密码" class="login-password">
+    <input type="text" name="num" id="num" placeholder="请输入用户名/手机号" class="login-name" value="{{ request.POST.num }}">
+        <p class="am-text-danger">{{ form.errors.num.0 }}</p>
+        <input type="password" name="password" id="password" placeholder="请输入密码" class="login-name">
+        <p class="am-text-danger">{{ form.errors.password.0 }}</p>
     <input type="submit" class="login-btn" value="我要登录">
     <div class="agree">
         <a href="{% url 'users:注册' %}">免费注册</a>

@@ -21,12 +21,14 @@
     <form action="" method="post" class="form-horizontal">
         {% csrf_token %}
         <div class="form-group">
-    <input type="text" name="num" placeholder="请输入手机号" value="{{ request.POST.username }}" class="login-name"><p class="text-danger">{{ form.errors.num.0 }}</p>
+    <input type="text" name="num" placeholder="请输入手机号" value="{{ request.POST.num }}" class="login-name">
+            <p class="am-text-danger">{{ form.errors.num.0 }}</p>
         </div>
-    <input type="password" name="password" placeholder="请输入密码" class="login-password"><p class="text-danger">{{ form.errors.password.0 }}</p>
+    <input type="password" name="password" placeholder="请输入密码" class="login-password">
+        <p class="am-text-danger">{{ form.errors.password.0 }}</p>
 
     <input type="password" name="repassword" placeholder="确认密码" class="login-name">
-    <p class="text-danger">{{ form.errors.repassword.0 }}</p>
+    <p class="am-text-danger">{{ form.errors.repassword.0 }}</p>
     <input type="submit" class="login-btn" value="立即注册">
     <div class="agree">
         <input type="checkbox" name="checkbox" value="同意" checked="">&nbsp;同意
