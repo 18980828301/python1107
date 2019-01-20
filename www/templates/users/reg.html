@@ -1,0 +1,36 @@
+{% extends 'common/parents.html' %}
+{% load static %}
+{% block title %}
+    <title>注册</title>
+{% endblock %}
+{% block header %}
+    <header data-am-widget="header" class="am-header am-header-default sq-head ">
+        <div class="am-header-left am-header-nav">
+            <a href="javascript:history.back()" class="">
+                <i class="am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">
+            <a href="" class="">注册</a>
+        </h1>
+    </header>
+    <div style="height: 49px;"></div>
+    <div style="height: 3rem;"></div>
+{% endblock %}
+{% block content %}
+    <form action="" method="post" class="form-horizontal">
+        {% csrf_token %}
+        <div class="form-group">
+    <input type="text" name="num" placeholder="请输入手机号" value="{{ request.POST.username }}" class="login-name"><p class="text-danger">{{ form.errors.num.0 }}</p>
+        </div>
+    <input type="password" name="password" placeholder="请输入密码" class="login-password"><p class="text-danger">{{ form.errors.password.0 }}</p>
+
+    <input type="password" name="repassword" placeholder="确认密码" class="login-name">
+    <p class="text-danger">{{ form.errors.repassword.0 }}</p>
+    <input type="submit" class="login-btn" value="立即注册">
+    <div class="agree">
+        <input type="checkbox" name="checkbox" value="同意" checked="">&nbsp;同意
+        <a href="" class="xy">《用户协议》</a>
+        <div class="r-login">已有账号，请<a href="{% url 'users:登录' %}" class="l-login">登录</a></div>
+    </form>
+{% endblock %}

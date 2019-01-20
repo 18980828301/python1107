@@ -1,0 +1,21 @@
+{% extends 'common/parents.html' %}
+{% load static %}
+{% block content %}
+    <form action="" method="post" class="form-horizontal">
+        {% csrf_token %}
+    <input type="text" name="num" id="num" placeholder="请输入用户名/手机号" class="login-name">
+    <input type="password" name="password" id="password" placeholder="请输入密码" class="login-password">
+    <input type="submit" class="login-btn" value="我要登录">
+    <div class="agree">
+        <a href="{% url 'users:注册' %}">免费注册</a>
+        <a href="forgetpassword.html" class="forget">忘记密码？</a>
+    </div>
+    <div class="line"></div>
+    <div class="line-text">第三方账号登录</div>
+    <ul class="second-login">
+        <li><a href=""><img src="{% static 'images/wxlogin.png' %}"/></a></li>
+        <li><a href=""><img src="{% static 'images/qqlogin.png' %}"/></a></li>
+        <li><a href=""><img src="{% static 'images/qqlogin.png' %}"/></a></li>
+    </ul>
+    </form>
+{% endblock %}
