@@ -6,7 +6,10 @@ from django.core.validators import MinLengthValidator, RegexValidator
 
 
 # Create your models here.
-class Users(models.Model):
+from db.base_model import BaseModel
+
+
+class Users(BaseModel):
     num = models.CharField(max_length=11,
                                 validators=[
                                     MinLengthValidator(11, '手机号码必须为11位'),

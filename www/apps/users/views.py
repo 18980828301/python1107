@@ -2,12 +2,14 @@ from django.http import HttpResponse
 from django.shortcuts import render,redirect
 
 # Create your views here.
+from django.utils.decorators import method_decorator
 from django.views import View
 
 
 #登录
 from users import set_password
 from users.form import RegisterModelForm, LoginModelForm
+from users.helper import check_login, login
 from users.models import Users
 
 
@@ -22,6 +24,9 @@ class LoginView(View):
         #判断是否合法
         if form.is_valid():
             #验证成功
+            # 保存登录标识到session中, 单独创建一个方法保存, 更新个人资料
+            user = form.cleaned_data['user']
+            login(request,user)
             return redirect('users:个人中心')
         else:
             return render(request,'users/login.html',context={'form':form})
@@ -47,9 +52,18 @@ class RegisterView(View):
             return redirect('users:登录')
         else:
             return render(request,'users/reg.html',context={'form':form})
+
+
+
 class MemberView(View):
-    def get(self,request):
-        return render(request,'users/member.html')
+    def get(self, request):
+        return render(request, 'users/member.html')
+
+    def post(self, request):
+        pass
+    @method_decorator(check_login)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request,*args,**kwargs)
 
 
 
