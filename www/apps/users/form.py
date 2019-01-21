@@ -95,3 +95,88 @@ class LoginModelForm(forms.ModelForm):
         # 返回所有清洗后的数据
         self.cleaned_data['user'] = user
         return self.cleaned_data
+
+class PasswordModelForm(forms.ModelForm):
+    newpassword = forms.CharField(max_length=16,
+                               min_length=8,
+                               error_messages={
+                                   'required': '必须填写新密码',
+                                   'min_length': '密码最小长度必须为8位',
+                                   'max_length': '密码最大长度不能超过16位',
+                               })
+    renewpassword = forms.CharField(max_length=16,
+                                  min_length=8,
+                                  error_messages={
+                                      'required': '必须填写确认密码',
+                                      'min_length': '密码最小长度必须为8位',
+                                      'max_length': '密码最大长度不能超过16位',
+                                  })
+    class Meta:
+        model = Users
+        fields = ['password','newpassword','renewpassword']
+        error_messages={
+            'password':{
+                'required': '旧密码必须填写',
+            }
+        }
+    def clean_password(self):
+        #验证密码是否存在
+        password=set_password(self.cleaned_data.get('password'))
+        flag=Users.objects.filter(password=password).exists()
+        #密码存在
+        if flag:
+            return password
+        #密码不存在
+        else:
+            raise forms.ValidationError("旧密码错误")
+
+    def clean(self):
+        # 判断两次密码是否一致
+        newpassword = self.cleaned_data.get('newpassword')
+        renewpassword = self.cleaned_data.get('renewpassword')
+        if renewpassword and newpassword and renewpassword != newpassword:
+            raise forms.ValidationError({'renewpassword': "两次密码不一致"})
+        else:
+            return self.cleaned_data
+
+class ForgetpasswordModelForm(forms.ModelForm):
+    newpassword = forms.CharField(max_length=16,
+                               min_length=8,
+                               error_messages={
+                                   'required': '必须填写新密码',
+                                   'min_length': '密码最小长度必须为8位',
+                                   'max_length': '密码最大长度不能超过16位',
+                               })
+    renewpassword = forms.CharField(max_length=16,
+                                  min_length=8,
+                                  error_messages={
+                                      'required': '必须填写确认密码',
+                                      'min_length': '密码最小长度必须为8位',
+                                      'max_length': '密码最大长度不能超过16位',
+                                  })
+    class Meta:
+        model = Users
+        fields = ['num','newpassword','renewpassword']
+        error_messages={
+            'num':{
+                'required': '电话号码必须填写',
+            }
+        }
+    def clean_num(self):
+        #验证密码是否存在
+        num=self.cleaned_data.get('num')
+        flag=Users.objects.filter(num=num).exists()
+        #密码存在
+        if flag:
+            return num
+        #密码不存在
+        else:
+            raise forms.ValidationError("手机号码错误")
+    def clean(self):
+        # 判断两次密码是否一致
+        newpassword = self.cleaned_data.get('newpassword')
+        renewpassword = self.cleaned_data.get('renewpassword')
+        if renewpassword and newpassword and renewpassword != newpassword:
+            raise forms.ValidationError({'renewpassword': "两次密码不一致"})
+        else:
+            return self.cleaned_data
