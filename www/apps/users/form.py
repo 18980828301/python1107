@@ -1,5 +1,8 @@
+from datetime import date
+
 from django import forms
 from django.core.validators import RegexValidator
+from django_redis import get_redis_connection
 
 from users import set_password
 from users.models import Users
@@ -24,6 +27,15 @@ class RegisterModelForm(forms.ModelForm):
                                      'min_length': '密码最小长度必须为8位',
                                      'max_length': '密码最大长度不能超过16位',
                                  })
+    # 验证码
+    captcha = forms.CharField(max_length=6,
+                              error_messages={
+                                  'required': "验证码必须填写"
+                              })
+
+    agree = forms.BooleanField(error_messages={
+        'required': '必须同意用户协议'
+    })
 
     class Meta:
         model = Users
@@ -51,8 +63,24 @@ class RegisterModelForm(forms.ModelForm):
         repwd = self.cleaned_data.get('repassword')
         if pwd and repwd and pwd != repwd:
             raise forms.ValidationError({'repassword': "两次密码不一致"})
-        else:
-            return self.cleaned_data
+
+
+        # 综合校验
+        # 验证 用户传入的验证码和redis中的是否一样
+        # 用户传入的
+        try:
+            captcha = self.cleaned_data.get('captcha')
+            num = self.cleaned_data.get('num','')
+            # 获取redis中的
+            r = get_redis_connection()
+            random_code = r.get(num)  # 二进制, 转码
+            random_code = random_code.decode('utf-8')
+            # 比对
+            if captcha and captcha != random_code:
+                raise forms.ValidationError({"captcha": "验证码输入错误!"})
+        except:
+            raise forms.ValidationError({"captcha": "验证码输入错误!"})
+        return self.cleaned_data
 
 
 class LoginModelForm(forms.ModelForm):
@@ -180,3 +208,19 @@ class ForgetpasswordModelForm(forms.ModelForm):
             raise forms.ValidationError({'renewpassword': "两次密码不一致"})
         else:
             return self.cleaned_data
+
+# class InfoViewModelForm(forms.ModelForm):
+#     class Meta:
+#         model = Users
+#         fields = ['num','birthday']
+#         error_messages={
+#             'num':{
+#                 'required': '电话号码必须填写',
+#             },
+#         }
+#     def clean_birthday(self):
+#         birthday = self.cleaned_data.get('birthday')
+#         if birthday > date.today():
+#             raise forms.ValidationError("日期错误")
+#         else:
+#             return birthday

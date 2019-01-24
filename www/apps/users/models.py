@@ -28,8 +28,12 @@ class Users(BaseModel):
     school=models.CharField(null=True,max_length=200,blank=True)
     location=models.CharField(null=True,max_length=200,blank=True)
     hometown=models.CharField(null=True,max_length=200,blank=True)
+    # 设置头像字段
+    head = models.ImageField(upload_to="head/%Y%m", default="head/memtx.png", verbose_name="用户头像")
     def __str__(self):
         return self.num
 
     class Meta:
         db_table = "users"
+        verbose_name='用户信息'
+        verbose_name_plural=verbose_name

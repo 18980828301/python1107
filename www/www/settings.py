@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'goods.apps.GoodsConfig',
     'cart.apps.CartConfig',
     'order.apps.OrderConfig',
+    'ckeditor',  # 添加ckeditor富文本编辑器
+    'ckeditor_uploader',  # 添加ckeditor富文本编辑器文件上传部件
 ]
 
 MIDDLEWARE = [
@@ -67,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',  # 添加渲染 MEDIA_URL 变量
             ],
         },
     },
@@ -126,3 +129,37 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
+##设置静态文件根目录  上线的时候使用
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+#添加django中的缓存配置
+CACHES = {
+        "default": {
+            "BACKEND": "django_redis.cache.RedisCache",
+            "LOCATION": "redis://127.0.0.1:6379/1",#redis启动起来使用的一号数据库(0-15)
+            "OPTIONS": {
+                "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            }
+        }
+    }
+#修改默认的session存储引擎
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
+
+
+# 配置短信需要的key
+ACCESS_KEY_ID = "LTAI2qSiJdWP87em"
+ACCESS_KEY_SECRET = "FzORQ587PgGBoOAdmxzCjaxQi8klUi"
+
+# 配置上传图片
+MEDIA_URL = "/static/media/"
+# 配置该URL对应的物理目录存储地址
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+#设置ckeditor的上传目录
+CKEDITOR_UPLOAD_PATH = "uploads/"
+# 编辑器样式配置
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}
