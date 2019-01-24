@@ -1,7 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be0a68ed-7451-4cb8-937f-0c145ee45bea" name="Default" comment="" />
+    <list default="true" id="be0a68ed-7451-4cb8-937f-0c145ee45bea" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/MANIFEST.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/README.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/aliyunsdkdybaseapi/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/aliyunsdkdybaseapi/request/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/aliyunsdkdybaseapi/request/v20170525/QueryTokenForMnsQueueRequest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/aliyunsdkdybaseapi/request/v20170525/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/aliyunsdkdysmsapi/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/aliyunsdkdysmsapi/request/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/aliyunsdkdysmsapi/request/v20170525/QueryInterSmsIsoInfoRequest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/aliyunsdkdysmsapi/request/v20170525/QuerySendDetailsRequest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/aliyunsdkdysmsapi/request/v20170525/QueryTokenForMnsQueueRequest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/aliyunsdkdysmsapi/request/v20170525/SendBatchSmsRequest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/aliyunsdkdysmsapi/request/v20170525/SendInterSmsRequest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/aliyunsdkdysmsapi/request/v20170525/SendSmsRequest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/aliyunsdkdysmsapi/request/v20170525/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/const.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/demo_sms_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/demo_sms_query.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/demo_sms_send.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/bin/mnscmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/mns/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/mns/mns_account.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/mns/mns_client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/mns/mns_common.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/mns/mns_exception.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/mns/mns_http.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/mns/mns_pkg_info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/mns/mns_queue.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/mns/mns_request.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/mns/mns_subscription.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/mns/mns_tool.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/mns/mns_topic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/mns/mns_xml_handler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample/access_log.8080" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample/createqueue.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample/createtopic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample/deletequeue.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample/deletetopic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample/endpoint_log.8080" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample/publishmessage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample/recvdelmessage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample/sample_common.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample/sendmessage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample/server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample/simple_http_notify_endpoint.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample/simple_https_notify_endpoint.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample/subscribe.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/sample/subscribe_queueendpoint.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/mns_python_sdk/setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/dysms_python/setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/templates/users/boundphone.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/templates/users/forgetpassword.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/templates/users/infor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/templates/users/password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/templates/users/saftystep.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/apps/users/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/www/apps/users/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/apps/users/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/www/apps/users/form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/apps/users/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/www/apps/users/helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/apps/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/www/apps/users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/apps/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/www/apps/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/www/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/templates/common/parents.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/templates/common/parents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/templates/users/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/templates/users/member.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/templates/users/member.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/templates/users/reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/templates/users/reg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/www/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/www/www/settings.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -9,8 +80,46 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/apps/users/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helper.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/apps/users/helper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/www/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="143" column="1" lean-forward="true" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/www/www/settings.py" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -33,11 +142,33 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="python1106" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python1106" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python1106" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python1106" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python1106" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python1106" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -71,26 +202,26 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="SciView" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,5 +229,28 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/www/apps/users/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/www/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="143" column="1" lean-forward="true" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/apps/users/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
