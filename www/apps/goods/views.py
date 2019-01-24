@@ -18,7 +18,7 @@ class CategoryView(VerifyLoginView):
         goods_skus = GoodsskuClassModel.objects.filter(is_delete=False)
         context={
             'goods':goods,
-            'goods_skus':goods_skus
+            'goods_skus':goods_skus,
         }
         return render(request,'goods/category.html',context=context)
     def post(self,request):
