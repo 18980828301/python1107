@@ -77,7 +77,7 @@ class GoodsskuClassModel(BaseModel):
 # 5.商品相册表
 class GoodsAlbumModel(BaseModel):
     photourl = models.ImageField(upload_to='goods/%y%m/%d', verbose_name='图片地址')
-    goodsSKUID = models.ForeignKey(to=GoodsskuClassModel, verbose_name='商品SKUID')
+    goodsSKUID = models.ForeignKey(to='GoodsskuClassModel', verbose_name='商品SKUID')
 
     class Meta:
         db_table = 'GoodsAlbumModel'

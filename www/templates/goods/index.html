@@ -1,7 +1,7 @@
 {% extends 'common/parents.html' %}
 {% load static %}
 {% block title %}
-    超市
+    <title>超市首页</title>
 {% endblock %}
 
 {% block header %}
@@ -33,7 +33,11 @@
     <!--图片轮换-->
     <div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0">
         <ul class="am-slides">
-            <li><img src="{% static 'images/banner.png' %}"/></li>
+            {% for banner in banner %}
+            <li><img src="{{ MEDIA_URL }}{{ banner.photourl }}"/></li>
+            {% endfor %}
+
+
         </ul>
     </div>
     <!--导航-->
@@ -82,7 +86,7 @@
         </li>
         <li>
             <div class="am-gallery-item">
-                <a href="category.html" class="">
+                <a href="{% url 'goods:超市' %}" class="">
                     <img src="{% static 'images/icon5.png' %}"/>
                     <p>超市</p>
                 </a>
@@ -93,19 +97,11 @@
     <div class="h-line"></div>
     <!--不规则展示-->
     <div class="index-product">
-        <div class="index-pro-lf"><a href=""><img src="{% static 'images/s1.png' %}"/></a></div>
-        <div class="index-pro-lr"><a href=""><img src="{% static 'images/s2.png' %}"/></a></div>
+        {% for act in act %}
+          <div class="index-pro-lr"><a href=""><img src="{{ MEDIA_URL }}{{ act.skuid.goodslogo }}"/></a></div>
+        {% endfor %}
     </div>
-    <div class="product-bot">
-        <div class="product-bot-lf"><a href=""><img src="{% static 'images/s3.png' %}"/></a></div>
-        <div class="product-bot-lr">
-            <div class="top"><a href=""><img src="{% static 'images/s4.png' %}"/></a></div>
-            <div class="bot">
-                <div class="bot-lf"><a href=""><img src="{% static 'images/s5.png' %}"/></a></div>
-                <div class="bot-lr"><a href=""><img src="{% static 'images/s6.png' %}"/></a></div>
-            </div>
-        </div>
-    </div>
+
     <!--不规则展示-->
     <div class="h-line"></div>
     <!-- 特色专区-->
@@ -114,24 +110,17 @@
         特色专区
     </div>
     <ul data-am-widget="gallery" class="am-gallery pro-list am-avg-sm-2 am-avg-md-2 am-avg-lg-4 am-gallery-default">
+    {% for index in index %}
         <li>
             <div class="am-gallery-item">
-                <a href="detail.html" class="">
-                    <img src="{% static 'images/test.png' %}"/>
-                    <h3 class="am-gallery-title">猪骨头棒新鲜生鲜肉制品猪大骨头筒骨熬汤佳品500g</h3>
+                <a href="{% url 'goods:详情' index.pk %}" class="">
+                    <img src="{{ MEDIA_URL }}{{ index.photourl }}"/>
+                    <h3 class="am-gallery-title">{{ index.name }}</h3>
                     <div class="am-gallery-desc">￥52</div>
                 </a>
             </div>
         </li>
-        <li>
-            <div class="am-gallery-item">
-                <a href="detail.html" class="">
-                    <img src="{% static 'images/test1.png' %}"/>
-                    <h3 class="am-gallery-title">冻品批发大江鸡腿 冷鲜鸡腿放心食材1kg 冷冻食材</h3>
-                    <div class="am-gallery-desc">￥39</div>
-                </a>
-            </div>
-        </li>
+         {% endfor %}
     </ul>
     <!--签到-->
     <div class="qd-box">

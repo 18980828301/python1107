@@ -1,13 +1,26 @@
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from django.views import View
+
 from db.base_view import VerifyLoginView
-from goods.models import GoodsSPUModel, GoodsskuClassModel, GoodsClassModel
+from goods.models import GoodsSPUModel, GoodsskuClassModel, GoodsClassModel, BannerModel, IndexActModel, HomeActarea
 
 
 class IndexView(VerifyLoginView):
     def get(self,request):
-        return render(request,'goods/index.html')
+        #获得轮播商品
+        banner=BannerModel.objects.filter(is_delete=False)
+        #获得首页活动专区
+        act=HomeActarea.objects.filter(is_delete=False)
+        #首页活动表
+        index=IndexActModel.objects.all()
+        context={
+            'banner':banner,
+            'act':act,
+            'index':index
+        }
+        return render(request,'goods/index.html',context=context)
     def post(self,request):
         pass
 class CategoryView(VerifyLoginView):
@@ -23,15 +36,13 @@ class CategoryView(VerifyLoginView):
         return render(request,'goods/category.html',context=context)
     def post(self,request):
         pass
-def detail(request,id):
-    try:
+class DetailView(View):
+    def get(self,request,id):
         goods = GoodsskuClassModel.objects.get(pk=id)
-    except GoodsskuClassModel.DoesNotExist:
-        return redirect("goods:首页")
-    context={
-        'goods':goods
-        }
-    return render(request,'goods/detail.html',context=context)
+        context={
+            'goods':goods
+            }
+        return render(request,'goods/detail.html',context=context)
 class TidingsView(VerifyLoginView):
     def get(self,request):
         return render(request,'goods/tidings.html')
