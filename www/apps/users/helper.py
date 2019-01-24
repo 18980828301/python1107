@@ -1,7 +1,8 @@
-from django.shortcuts import redirect
 
+from django.shortcuts import redirect
 from www.settings import SECRET_KEY
 import hashlib
+
 
 def set_password(password):
     # 循环加密 + 加盐
@@ -17,7 +18,7 @@ def set_password(password):
 def login(request,user):#保存session的方法
     request.session['ID'] = user.pk
     request.session['num'] = user.num
-    # request.session['head'] = user.head
+    request.session['head'] = user.head
     request.session.set_expiry(0)  # 关闭浏览器就消失
 
 
@@ -34,3 +35,4 @@ def check_login(func): #登录验证装饰器
 
     # 返回新函数
     return verify_login
+
